@@ -1,0 +1,14 @@
+{
+    "name": "Calculator",
+    "version": "0.0.0.1",
+    "manifest_version": 3,
+    "description": "An extension to provide basic calculator features",
+    "icons": {
+      "32": "icons/cal-icon.png"
+    },
+    "action": {
+      "default_popup": "popup/index.html"
+    },
+
+    "permissions": ["tabs"]
+}
