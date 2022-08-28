@@ -2,7 +2,7 @@
     "name": "Calculator",
     "version": "0.0.0.1",
     "manifest_version": 3,
-    "description": "An extension to provide basic calculator features",
+    "description": "This extension provides all features of basic calculator like addition, subtraction, multiplication and division",
     "icons": {
       "32": "icons/cal-icon.png"
     },

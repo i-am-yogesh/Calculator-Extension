@@ -84,49 +84,50 @@ if (str !== '') { outputQueue.push(new Number(str)); }
 
 
 //function and variables to call above function
-let result = document.getElementById('result');
+let resultInput = document.getElementById('result-input');
+let resultOutput = document.getElementById('result-output');
 let buttons = Array.from(document.getElementsByClassName('buttons-sub'));
 
 buttons.map( button => {
     button.addEventListener('click', (e) => {
         switch(e.target.innerText){
             case 'C':
-                result.innerText = '';
+                resultInput.innerText = '';
                 break;
             case '=':
-                    result.innerText = findResult(result.innerHTML);
+                    resultOutput.innerText = findResult(resultInput.innerHTML);
                 break;
             case '←':
-                if (result.innerText){
-                   result.innerText = result.innerText.slice(0, -1);
+                if (resultInput.innerText){
+                   resultInput.innerText = resultInput.innerText.slice(0, -1);
                 }
                 break;
             default:
-                result.innerText += e.target.innerText;
+                resultInput.innerText += e.target.innerText;
         }
     });
 });
 
 document.addEventListener("keydown", e => {
-    if(e.key == 1) result.innerHTML += e.key;
-    if(e.key == 2) result.innerHTML += e.key;
-    if(e.key == 3) result.innerHTML += e.key;
-    if(e.key == 4) result.innerHTML += e.key;
-    if(e.key == 5) result.innerHTML += e.key;
-    if(e.key == 6) result.innerHTML += e.key;
-    if(e.key == 7) result.innerHTML += e.key;
-    if(e.key == 8) result.innerHTML += e.key;
-    if(e.key == 9) result.innerHTML += e.key;
-    if(e.key == 0) result.innerHTML += e.key;
-    if(e.key == '.') result.innerHTML += e.key;
-    if(e.key == '(') result.innerHTML += e.key;
-    if(e.key == ')') result.innerHTML += e.key;
-    if(e.key == '*') result.innerHTML += e.key;
-    if(e.key == '/') result.innerHTML += e.key;
-    if(e.key == '+') result.innerHTML += e.key;
-    if(e.key == '-') result.innerHTML += e.key;
-    if(e.key == '=') result.innerText = findResult(result.innerHTML);
-    if(e.key == "Backspace") result.innerText = result.innerText.slice(0, -1); 
-    if(e.key == 'c' || e.key == 'C') result.innerText = '';
-    if(e.key == 'Enter') result.innerText = findResult(result.innerHTML);
+    if(e.key == 1) resultInput.innerHTML += e.key;
+    if(e.key == 2) resultInput.innerHTML += e.key;
+    if(e.key == 3) resultInput.innerHTML += e.key;
+    if(e.key == 4) resultInput.innerHTML += e.key;
+    if(e.key == 5) resultInput.innerHTML += e.key;
+    if(e.key == 6) resultInput.innerHTML += e.key;
+    if(e.key == 7) resultInput.innerHTML += e.key;
+    if(e.key == 8) resultInput.innerHTML += e.key;
+    if(e.key == 9) resultInput.innerHTML += e.key;
+    if(e.key == 0) resultInput.innerHTML += e.key;
+    if(e.key == '.') resultInput.innerHTML += e.key;
+    if(e.key == '(') resultInput.innerHTML += e.key;
+    if(e.key == ')') resultInput.innerHTML += e.key;
+    if(e.key == '*') resultInput.innerHTML += e.key;
+    if(e.key == '/') resultInput.innerHTML += e.key;
+    if(e.key == '+') resultInput.innerHTML += e.key;
+    if(e.key == '-') resultInput.innerHTML += e.key;
+    if(e.key == '=') resultOutput.innerText = findResult(resultInput.innerHTML);
+    if(e.key == "Backspace") resultInput.innerText = resultInput.innerText.slice(0, -1); 
+    if(e.key == 'c' || e.key == 'C' || e.key == 'Delete') resultInput.innerText = '';
+    if(e.key == 'Enter') resultOutput.innerText = findResult(resultInput.innerHTML);
 })
